@@ -1,7 +1,6 @@
 #include <stdio.h>
 /** 
  *main - Entry point
- * My hello, printf task
  *Return: retunr 1 after program execution
  */
 int main(void)
