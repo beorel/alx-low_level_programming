@@ -1,4 +1,2 @@
-all: school
-
-holberton: holberton.c main.c
+all: m.h main.c school.c
 	gcc main.c school.c -o school

@@ -1,24 +1,26 @@
-CC=gcc
-SRC=main.c holberton.c
-OBJ=$(SRC:%.c=%.o)
-NAME=holberton
-RM=rm
+# Usage: make [all/clean/oclean/fclean] -f [file]
 
-.PHONY: re oclean fclean clean all
 
-all: $(NAME)
+CC = gcc
+SRC = main.c school.c
+OBJ = $(SRC:.c=.o)
+NAME = school
+RM = rm -f
 
-$(NAME): $(OBJ)
-	$(CC) $(OBJ) -o $@
+# make all == makes executable
+all: m.h $(OBJ)
+	$(CC) $(OBJ) -o $(NAME)
 
+# deletes tmp files & executable
 clean:
-	$(RM) -f *~ $(NAME)
+	$(RM) *~ $(NAME)
 
+# deletes object files
 oclean:
-	$(RM) -f $(OBJ)
+	$(RM) $(OBJ)
 
-fclean:
-	$(RM) -f *~ $(NAME)
-	$(RM) -f $(OBJ)
+# deletes all (tmp files, executable, & obj files)
+fclean: clean oclean
 
+# deletes all & recompiles all source files
 re: oclean all
